@@ -1,7 +1,9 @@
 package com.example.localfeeds.models;
 
 public class Preferences {
+
     private static double distance;
+    private static String[] productCategories;
 
     public static double getDistance() {
         return distance;
@@ -18,6 +20,4 @@ public class Preferences {
     public static void setProductCategories(String[] productCategories) {
         Preferences.productCategories = productCategories;
     }
-
-    private static String[] productCategories;
 }
