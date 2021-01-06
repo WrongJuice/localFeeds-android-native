@@ -8,7 +8,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -29,8 +31,10 @@ public class FireStoreService {
         Map<String, Object> announcement = new HashMap<>();
         announcement.put("idProductor", productor);
         announcement.put("desc", desc);
+        Timestamp now = Timestamp.now();
+        announcement.put("date", now);
 
-        db.collection("announcement")
+        db.collection("announcements")
                 .add(announcement)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -47,8 +51,7 @@ public class FireStoreService {
     }
 
     Task<QuerySnapshot> getAnnouncements() {
-        return db.collection("announcements")
-                .get()
+        return db.collection("announcements").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -61,6 +64,38 @@ public class FireStoreService {
                         }
                     }
                 });
+    }
+
+    Task<DocumentSnapshot> getAnnouncement(String id) {
+        return db.collection("announcements").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    void modifyAnnouncement(String id, String mess) {
+        db.collection("announcements").document(id).update("desc", mess);
+    }
+
+    void deleteAnnouncement(String id){
+       db.collection("announcements").document(id).delete();
+    }
+
+    Task<QuerySnapshot> getAnnouncementByProductor(String idProductor) {
+        return db.collection("announcements")
+                .whereEqualTo("idProductor", idProductor)
+                .get();
     }
 
 }
