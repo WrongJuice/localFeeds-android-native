@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.localfeeds.R;
+
 public class ListeProducteursActivity extends AppCompatActivity {
 
     @Override
