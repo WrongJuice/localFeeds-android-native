@@ -21,38 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FireStoreService fireStoreService = new FireStoreService();
-        fireStoreService.addAnnouncement("id1","Des tomates sont disponibles !");
-        fireStoreService.addAnnouncement("id1","Des carrottes sont disponibles !");
-        fireStoreService.addAnnouncement("id2","Des oeufs sont disponibles !");
-
-        Task<QuerySnapshot> listAnnonce = fireStoreService.getAnnouncements().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d(TAG, document.getId() + " => " + document.getData());
-                        fireStoreService.modifyAnnouncement(document.getId(), "C'est modifié");
-                        fireStoreService.getAnnouncement(document.getId());
-                    }
-                } else {
-                    Log.w(TAG, "Error getting documents.", task.getException());
-                }
-            }
-        });
-
-        fireStoreService.getAnnouncementByProductor("id1").addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d(TAG, document.getId() + " hey! " + " => " + document.getData());
-                    }
-                } else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
-                }
-            }
-        });
     }
 
 }

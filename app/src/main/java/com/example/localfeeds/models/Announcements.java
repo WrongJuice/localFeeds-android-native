@@ -1,4 +1,4 @@
-package com.example.localfeeds.activities;
+package com.example.localfeeds.models;
 
 import com.google.firebase.Timestamp;
 
