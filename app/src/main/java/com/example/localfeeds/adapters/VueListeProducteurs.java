@@ -31,6 +31,6 @@ public class VueListeProducteurs extends FrameLayout {
         texteHorairesOuvertures.setText(producteur.getSchedule());
         texteDescriptionProducteur.setText(producteur.getDesc());
 
-
+        imageProducteur.setImageResource(R.drawable.ic_baseline_person_24);
     }
 }
