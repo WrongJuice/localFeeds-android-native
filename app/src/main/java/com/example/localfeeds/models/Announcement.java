@@ -4,15 +4,16 @@ import com.google.firebase.Timestamp;
 
 import java.util.Date;
 
-public class Announcements {
+public class Announcement {
 
     private String idProductor;
     private String description;
     private Date date;
 
-    public Announcements(String idProductor, String description) {
+    public Announcement(String idProductor, String description) {
         this.idProductor = idProductor;
         this.description = description;
+        this.date = new Date();
     }
 
     public String getIdProductor() {
