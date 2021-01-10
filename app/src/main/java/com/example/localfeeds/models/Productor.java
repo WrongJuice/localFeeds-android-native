@@ -77,4 +77,5 @@ public class Productor {
     public void setTypeProduit(ArrayList<String> typeProduit) {
         this.typeProduit = typeProduit;
     }
+
 }

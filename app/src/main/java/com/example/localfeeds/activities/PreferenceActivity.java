@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.localfeeds.R;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,9 @@ public class PreferenceActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editor.putBoolean(getString(R.string.is_vegetarien), boutonSwitch.isChecked());
                 editor.apply();
-                // lancer activity lucien
+
+                Intent intentionNaviguerListeProducteurs = new Intent(PreferenceActivity.this, ListeProducteursActivity.class);
+                startActivity(intentionNaviguerListeProducteurs);
             }
         });
     }

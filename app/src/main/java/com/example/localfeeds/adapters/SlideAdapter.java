@@ -1,4 +1,4 @@
-package com.example.localfeeds.activities;
+package com.example.localfeeds.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
