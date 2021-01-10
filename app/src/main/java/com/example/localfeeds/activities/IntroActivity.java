@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity {
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         dotsLayout = (LinearLayout) findViewById(R.id.dotsLayout);
-        boutonDebut = (Button) findViewById(R.id.boutonDebut);
+        boutonDebut = (Button) findViewById(R.id.buttonStartApp);
         boutonDebut.setEnabled(false);
 
         slideAdapter = new SlideAdapter(this);
@@ -41,7 +41,7 @@ public class IntroActivity extends AppCompatActivity {
         boutonDebut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_activity = new Intent(IntroActivity.this, MainActivity.class);
+                Intent main_activity = new Intent(IntroActivity.this, PreferenceActivity.class);
                 startActivity(main_activity);
                 finish();
             }
