@@ -6,14 +6,24 @@ import java.util.Date;
 
 public class Announcement {
 
+    private String id;
     private String idProductor;
     private String description;
     private Date date;
 
-    public Announcement(String idProductor, String description) {
+    public Announcement(String id, String idProductor, String description) {
+        this.id = id;
         this.idProductor = idProductor;
         this.description = description;
         this.date = new Date();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdProductor() {
