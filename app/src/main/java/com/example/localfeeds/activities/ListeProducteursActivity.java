@@ -2,7 +2,10 @@ package com.example.localfeeds.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.localfeeds.R;
@@ -25,12 +28,23 @@ public class ListeProducteursActivity extends AppCompatActivity {
         ListeProducteurAdapteur listeProducteurAdapteur = new ListeProducteurAdapteur(getApplicationContext());
         listeProducteurs.setAdapter(listeProducteurAdapteur);
 
+        // Recuperer les données du service
         List<Productor> listeDesProducteurs = new ArrayList<>();
         Productor productor = new Productor("Jean masse", "13 rue de la soif",
                 "0617354683", "8h / 18h", "Ceci est la description", null);
         listeDesProducteurs.add(productor);
         listeDesProducteurs.add(productor);
         listeDesProducteurs.add(productor);
+
+        listeProducteurs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intentionNaviguerInformationProducteur = new Intent(ListeProducteursActivity.this, InformationProducteur.class);
+                intentionNaviguerInformationProducteur.putExtra("id_producteur", listeDesProducteurs.get(i).getName());
+                startActivity(intentionNaviguerInformationProducteur);
+            }
+        });
 
         listeProducteurAdapteur.setProducteurs(listeDesProducteurs);
     }
