@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Productor {
 
+    private String id;
     private String name;
     private String adresse;
     private String contact;
@@ -11,13 +12,22 @@ public class Productor {
     private String desc;
     private ArrayList<String> typeProduit;
 
-    public Productor(String name, String adresse, String contact, String schedule, String desc, ArrayList<String> typeProduit) {
+    public Productor(String id, String name, String adresse, String contact, String schedule, String desc, ArrayList<String> typeProduit) {
+        this.id = id;
         this.name = name;
         this.adresse = adresse;
         this.contact = contact;
         this.schedule = schedule;
         this.desc = desc;
         this.typeProduit = typeProduit;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
