@@ -59,12 +59,10 @@ public class ProductorService {
 
     public  Productor getProductorById(String id) {
         for (Productor productor : productors) {
-            if (productor.getId() == id){
+            if (productor.getId().equals(id)){
                 return productor;
             }
         }
         return null;
     }
-
-
 }

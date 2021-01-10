@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.localfeeds.R;
 import com.example.localfeeds.adapters.ListeProducteurAdapteur;
+import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Productor;
 
 import java.util.ArrayList;
@@ -29,12 +30,7 @@ public class ListeProducteursActivity extends AppCompatActivity {
         listeProducteurs.setAdapter(listeProducteurAdapteur);
 
         // Recuperer les données du service
-        List<Productor> listeDesProducteurs = new ArrayList<>();
-        Productor productor = new Productor("Jean masse", "13 rue de la soif",
-                "0617354683", "8h / 18h", "Ceci est la description", null);
-        listeDesProducteurs.add(productor);
-        listeDesProducteurs.add(productor);
-        listeDesProducteurs.add(productor);
+        List<Productor> listeDesProducteurs = new ProductorService().getProductors();
 
         listeProducteurs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

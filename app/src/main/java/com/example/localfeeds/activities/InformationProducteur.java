@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.localfeeds.R;
+import com.example.localfeeds.datas.ProductorService;
+import com.example.localfeeds.models.Productor;
 
 public class InformationProducteur extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class InformationProducteur extends AppCompatActivity {
         Bundle parametres = this.getIntent().getExtras();
         String parametreId_producteur = (String) parametres.get("id_producteur");
 
-        // RECUPERER LE PRODUCTEUR
+        Productor productor = new ProductorService().getProductorById(parametreId_producteur);
 
         ImageButton arrow = findViewById(R.id.arrow_button);
         LinearLayout hiddenView = findViewById(R.id.hidden_view);
@@ -32,6 +34,10 @@ public class InformationProducteur extends AppCompatActivity {
         TextView champAdresse = findViewById(R.id.vue_information_producteur_champ_adresse);
         TextView champHoraires = findViewById(R.id.vue_information_producteur_champ_horaires);
         TextView champDescription = findViewById(R.id.vue_information_producteur_champ_description);
+
+        champAdresse.setText(productor.getAdresse());
+        champHoraires.setText(productor.getSchedule());
+        champDescription.setText(productor.getDesc());
 
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
