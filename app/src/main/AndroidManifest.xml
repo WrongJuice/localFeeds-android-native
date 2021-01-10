@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LocalFeeds">
         <activity android:name=".activities.InformationProducteur"></activity>
-        <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.ListeProducteursActivity">
+        <activity android:name=".activities.PreferenceActivity"></activity>
+        <activity android:name=".activities.IntroActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
