@@ -41,7 +41,7 @@ public class ListeProducteursActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Intent intentionNaviguerInformationProducteur = new Intent(ListeProducteursActivity.this, InformationProducteur.class);
-                intentionNaviguerInformationProducteur.putExtra("id_producteur", listeDesProducteurs.get(i).getName());
+                intentionNaviguerInformationProducteur.putExtra("id_producteur", listeDesProducteurs.get(i).getId());
                 startActivity(intentionNaviguerInformationProducteur);
             }
         });

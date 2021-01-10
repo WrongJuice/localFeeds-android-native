@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Productor {
 
+    private String id;
     private String name;
     private String adresse;
     private String contact;
@@ -66,5 +67,13 @@ public class Productor {
 
     public void setTypeProduit(ArrayList<String> typeProduit) {
         this.typeProduit = typeProduit;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
