@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.localfeeds.R;
+import com.example.localfeeds.adapters.SlideAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
