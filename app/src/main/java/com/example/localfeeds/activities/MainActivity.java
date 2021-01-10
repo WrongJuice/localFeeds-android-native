@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent start_onboarding = new Intent(MainActivity.this, IntroActivity.class);
-                //add_user.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(start_onboarding);
                 finish();
             }
