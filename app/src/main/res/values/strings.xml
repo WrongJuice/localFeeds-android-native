@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">localFeeds</string>
+    <string name="informations_producteur">Informations producteur</string>
 </resources>
