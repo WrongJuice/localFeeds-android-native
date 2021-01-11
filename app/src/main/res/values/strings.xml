@@ -5,4 +5,5 @@
     <string name="distance">12,6 km</string>
     <string name="productor_name">Le nom du Producteur</string>
     <string name="favorite_icon_description">icône de favori</string>
+    <string name="announcement_title">Titre Annonce</string>
 </resources>
