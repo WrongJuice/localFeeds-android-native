@@ -2,6 +2,7 @@ package com.example.localfeeds.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,16 @@ public class VueListeProducteurs extends FrameLayout {
         TextView texteHorairesOuvertures = findViewById(R.id.modele_liste_producteurs_horaires_ouverture);
 
         ImageView imageProducteur = findViewById(R.id.modele_producteurs_patient_image_producteur);
+
+        ImageView favoriteButton = findViewById(R.id.add_favorite_icon);
+
+        favoriteButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                favoriteButton.setImageResource(R.drawable.ic_love_color);
+            }
+        });
 
         texteNomProducteur.setText(producteur.getName());
         texteHorairesOuvertures.setText(producteur.getSchedule());

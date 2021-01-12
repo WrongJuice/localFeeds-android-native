@@ -12,6 +12,7 @@
         android:layout_height="56dp" />
 
     <ImageView
+        android:id="@+id/add_favorite_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
