@@ -2,7 +2,9 @@ package com.example.localfeeds.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +31,9 @@ public class ListeProducteursActivity extends AppCompatActivity {
         ListeProducteurAdapteur listeProducteurAdapteur = new ListeProducteurAdapteur(getApplicationContext());
         listeProducteurs.setAdapter(listeProducteurAdapteur);
 
-        // Recuperer les données du service
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        boolean isVegetarien = sharedPref.getBoolean(getString(R.string.is_vegetarien), false);
+
         List<Productor> listeDesProducteurs = new ProductorService().getProductors();
 
         listeProducteurs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
