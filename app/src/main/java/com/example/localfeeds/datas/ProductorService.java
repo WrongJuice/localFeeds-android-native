@@ -1,5 +1,6 @@
 package com.example.localfeeds.datas;
 
+import com.example.localfeeds.models.Product;
 import com.example.localfeeds.models.Productor;
 
 import java.util.ArrayList;
@@ -13,13 +14,13 @@ public class ProductorService {
     ArrayList<Productor> productors = new ArrayList<>();
 
     public ProductorService() {
-        ArrayList<String> productViande = new ArrayList<>();
-        ArrayList<String> productOther = new ArrayList<>();
-        ArrayList<String> productMilk = new ArrayList<>();
+        ArrayList<Product> productViande = new ArrayList<>();
+        ArrayList<Product> productOther = new ArrayList<>();
+        ArrayList<Product> productMilk = new ArrayList<>();
 
-        productViande.add("Poisson");productViande.add("Viande");
-        productOther.add("Oeuf");productOther.add("Légumes");productOther.add("Fruit");
-        productMilk.add("Laitage");
+        productViande.add(Product.Viande);
+        productOther.add(Product.Autre);productOther.add(Product.Légume);productOther.add(Product.Fruit);
+        productMilk.add(Product.Laitage);
 
         productor1 = new Productor(
                 "id1",

@@ -10,9 +10,9 @@ public class Productor {
     private String contact;
     private String schedule;
     private String desc;
-    private ArrayList<String> typeProduit;
+    private ArrayList<Product> typeProduit;
 
-    public Productor(String id, String name, String adresse, String contact, String schedule, String desc, ArrayList<String> typeProduit) {
+    public Productor(String id, String name, String adresse, String contact, String schedule, String desc, ArrayList<Product> typeProduit) {
         this.id = id;
         this.name = name;
         this.adresse = adresse;
@@ -70,11 +70,11 @@ public class Productor {
         this.desc = desc;
     }
 
-    public ArrayList<String> getTypeProduit() {
+    public ArrayList<Product> getTypeProduit() {
         return typeProduit;
     }
 
-    public void setTypeProduit(ArrayList<String> typeProduit) {
+    public void setTypeProduit(ArrayList<Product> typeProduit) {
         this.typeProduit = typeProduit;
     }
 
