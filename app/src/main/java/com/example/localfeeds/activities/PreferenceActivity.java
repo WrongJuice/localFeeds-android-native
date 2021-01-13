@@ -24,8 +24,8 @@ public class PreferenceActivity extends AppCompatActivity {
         boutonSwitch = findViewById(R.id.switchVege);
         boutonConfirm = findViewById(R.id.boutonConfirmerPreference);
 
-        SharedPreferences sharedPref = this.getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
 
         boutonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
