@@ -19,4 +19,5 @@
     <string name="text_titre_slide">LocalFeeds</string>
     <string name="text_desc_slide">L\'application pour consommer local.</string>
     <string name="anouncement_list">Liste d\'annonces</string>
+    <string name="icon_right_arrow">icon qui mène à la fiche producteur</string>
 </resources>
