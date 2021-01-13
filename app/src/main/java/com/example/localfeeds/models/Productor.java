@@ -10,15 +10,17 @@ public class Productor {
     private String contact;
     private String schedule;
     private String desc;
+    private String image;
     private ArrayList<Product> typeProduit;
 
-    public Productor(String id, String name, String adresse, String contact, String schedule, String desc, ArrayList<Product> typeProduit) {
+    public Productor(String id, String name, String adresse, String contact, String schedule, String desc, String image, ArrayList<Product> typeProduit) {
         this.id = id;
         this.name = name;
         this.adresse = adresse;
         this.contact = contact;
         this.schedule = schedule;
         this.desc = desc;
+        this.image = image;
         this.typeProduit = typeProduit;
     }
 
@@ -78,4 +80,11 @@ public class Productor {
         this.typeProduit = typeProduit;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

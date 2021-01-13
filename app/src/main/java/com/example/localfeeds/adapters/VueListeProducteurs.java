@@ -2,6 +2,7 @@ package com.example.localfeeds.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -62,6 +63,9 @@ public class VueListeProducteurs extends FrameLayout {
         texteNomProducteur.setText(producteur.getName());
         texteHorairesOuvertures.setText(producteur.getSchedule());
 
-        imageProducteur.setImageResource(R.drawable.ic_baseline_person_24);
+        Context context = imageProducteur.getContext();
+        System.out.println(producteur.getImage());
+        int id = context.getResources().getIdentifier(producteur.getImage(), "drawable", context.getPackageName());
+        imageProducteur.setImageResource(id);
     }
 }

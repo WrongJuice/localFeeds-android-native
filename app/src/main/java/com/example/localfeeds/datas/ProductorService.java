@@ -30,6 +30,7 @@ public class ProductorService {
                 "0378654534",
                 "Vendredi 12h - 18h",
                 "Petite ferme en bord de mer, viande et poisson",
+                "ferme1",
                 productViande
         );
         productor2 = new Productor(
@@ -39,6 +40,7 @@ public class ProductorService {
                 "028987674",
                 "Mercredi et Jeudi 12h - 14h",
                 "Le paradis des fruits et légumes ! Venez décrouvrir notre production, et caresser nos magnifiques poules",
+                "ferme2",
                 productOther
         );
         productor3 = new Productor(
@@ -48,6 +50,7 @@ public class ProductorService {
                 "0378654534",
                 "Du Lundi au Vendredi, 16h-19h",
                 "Le meilleur fromage à la coupe à proximité de chez vous",
+                "ferme3",
                 productMilk
         );
         productor4 = new Productor(
@@ -57,6 +60,7 @@ public class ProductorService {
                 "0394959595",
                 "Mardi, 14h-19h",
                 "Un des tout meilleur de sa région",
+                "ferme4",
                 productOther
         );
         productors.add(productor1);
