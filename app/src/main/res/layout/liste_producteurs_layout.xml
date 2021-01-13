@@ -3,22 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:fontFamily="sans-serif-light">
+    android:theme="@style/Theme.LocalFeeds">
 
     <ImageView
         android:id="@+id/modele_producteurs_patient_image_producteur"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:layout_width="56dp"
         android:layout_height="56dp" />
+
+    <ImageView
+        android:id="@+id/add_favorite_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_love"
+        android:contentDescription="@string/favorite_icon_description" />
 
     <TextView
         android:id="@+id/modele_liste_producteurs_nom_prenom_producteur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@id/modele_producteurs_patient_image_producteur"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="13dp"
-        android:textSize="16sp"
+        android:layout_marginTop="0dp"
+        android:theme="@style/Theme.LocalFeeds"
+        android:layout_toEndOf="@id/modele_producteurs_patient_image_producteur"
+        android:hint="Le producteur salut"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
@@ -26,17 +39,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/Theme.LocalFeeds"
+        android:hint="Mercredi au jeudi, 14h / 17h"
         android:layout_below="@id/modele_liste_producteurs_nom_prenom_producteur"
         android:layout_toEndOf="@id/modele_producteurs_patient_image_producteur"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/modele_liste_producteurs_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/modele_producteurs_patient_image_producteur"
-        android:layout_marginTop="5dp" />
+    <ImageView
+        android:id="@+id/modele_liste_producteur_logo_meat"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_below="@+id/modele_producteurs_patient_image_producteur"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_meat" />
 
+    <ImageView
+        android:id="@+id/modele_liste_producteur_logo_egg"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/modele_producteurs_patient_image_producteur"
+        android:layout_toEndOf="@+id/modele_liste_producteur_logo_meat"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_eggs" />
+
+    <ImageView
+        android:id="@+id/modele_liste_producteur_logo_vegetable"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/modele_producteurs_patient_image_producteur"
+        android:layout_toEndOf="@+id/modele_liste_producteur_logo_egg"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_vegetable" />
+
+    <ImageView
+        android:id="@+id/modele_liste_producteur_logo_fruits"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/modele_producteurs_patient_image_producteur"
+        android:layout_toEndOf="@+id/modele_liste_producteur_logo_vegetable"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_fruits" />
+
+    <ImageView
+        android:id="@+id/modele_liste_producteur_logo_milk"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/modele_producteurs_patient_image_producteur"
+        android:layout_toEndOf="@+id/modele_liste_producteur_logo_fruits"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_milk" />
 
 </RelativeLayout>

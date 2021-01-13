@@ -10,10 +10,12 @@ public class Announcement {
     private String idProductor;
     private String description;
     private Date date;
+    private String title;
 
-    public Announcement(String id, String idProductor, String description) {
+    public Announcement(String id, String idProductor, String title, String description) {
         this.id = id;
         this.idProductor = idProductor;
+        this.title = title;
         this.description = description;
         this.date = new Date();
     }
@@ -48,5 +50,9 @@ public class Announcement {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getTitle() {
+        return this.title;
     }
 }

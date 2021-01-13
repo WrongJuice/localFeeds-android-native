@@ -16,6 +16,7 @@ import com.example.localfeeds.R;
 import com.example.localfeeds.activities.AnnouncementsListActivity;
 import com.example.localfeeds.activities.DetailAnnouncementActivity;
 import com.example.localfeeds.activities.MainActivity;
+import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Announcement;
 
 import java.util.ArrayList;
@@ -46,21 +47,20 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
         TextView title = convertView.findViewById(R.id.title);
         TextView distance = convertView.findViewById(R.id.distance);
         LinearLayout announcementView = convertView.findViewById(R.id.announcement_view);
-        ImageView favoriteIcon = convertView.findViewById(R.id.favorite_icon);
 
+        //NEED TO BE SOLVED
+        ProductorService productorService = new ProductorService();
 
         // Populate the data into the template view using the data object
-        productorName.setText(announcement.getIdProductor());
+        productorName.setText(productorService.getProductorById(announcement.getIdProductor()).getName());
         announcementDescription.setText(announcement.getDescription());
-        title.setText(announcement.getId());
+        title.setText(announcement.getTitle());
         //distance.setText(announcement.getProductor.récupérer sa distance);
-
-        favoriteIcon.setOnClickListener(v -> {
-            favoriteIcon.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
-        });
 
         announcementView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailAnnouncementActivity.class);
+            intent.putExtra("announcement_title", announcement.getTitle());
+            intent.putExtra("announcement_desc", announcement.getDescription());
             context.startActivity(intent);
         });
 

@@ -5,19 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginBottom="50dp"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:textColor="@color/black"
-        android:textSize="21sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/title">
-    </TextView>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:id="@+id/title"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/title">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:id="@+id/date"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:text="01/02/2020">
+        </TextView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,54 +59,51 @@
             android:text="@string/description">
         </TextView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_baseline_favorite_border_24"
-            android:contentDescription="@string/favorite_icon_description">
-
-        </ImageView>
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/productor_name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:text="@string/productor_name">
-        </TextView>
+            android:orientation="horizontal"
+            android:onClick="launch"
+            android:background="@drawable/button_background"
+            >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/favorite_icon"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_baseline_favorite_border_24"
-            android:contentDescription="@string/favorite_icon_description">
+            <TextView
+                android:id="@+id/productor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/productor_name"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
 
-        </ImageView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/ic_baseline_arrow_forward_24"
+                android:contentDescription="@string/icon_right_arrow" />
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/distance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/distance"
-            android:textColor="@color/black"
+            android:layout_margin="5dp"
+            android:text="@string/distance"
             android:textAlignment="viewEnd"
-            android:textSize="16sp"
-            android:text="@string/distance">
-        </TextView>
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
