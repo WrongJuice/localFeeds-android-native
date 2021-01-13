@@ -4,60 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/queen_pink"
     tools:context=".activities.PreferenceActivity">
 
     <Button
         android:id="@+id/boutonConfirmerPreference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/go_green"
         android:text="@string/bouton_confirmer_preferences"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchProduitsLaitiers"
-        app:layout_constraintVertical_bias="0.595" />
-
-    <Switch
-        android:id="@+id/switchVege"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/text_switch_vege"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textQuestionPrefAlimentaires" />
-
-    <Switch
-        android:id="@+id/switchGluten"
-        android:layout_width="131dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="38dp"
-        android:text="@string/text_switch_gluten"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchVege" />
-
-    <Switch
-        android:id="@+id/switchProduitsLaitiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="@string/text_produits_laitiers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchGluten" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <TextView
         android:id="@+id/textQuestionPrefAlimentaires"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="44dp"
         android:text="@string/text_question_preferences_alimentaires"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <Switch
+        android:id="@+id/switchProduitsLaitiers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/text_produits_laitiers"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchVege" />
+
+    <Switch
+        android:id="@+id/switchVege"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/text_switch_vege"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textQuestionPrefAlimentaires" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/food" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

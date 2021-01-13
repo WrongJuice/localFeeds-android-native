@@ -9,15 +9,18 @@
     <string name="informations_producteur">Informations producteur</string>
     <string name="is_vegetarien">vegetarien</string>
     <string name="nom_application">LocalFeeds</string>
-    <string name="first_start_app">Commencer</string>
-    <string name="start_app">Commencer</string>
+    <string name="first_start_app">Premiers pas</string>
+    <string name="start_app">C\'est parti !</string>
     <string name="bouton_confirmer_preferences">Confirmer</string>
-    <string name="text_switch_vege">Végétarien</string>
-    <string name="text_switch_gluten">Sans gluten</string>
-    <string name="text_produits_laitiers">Produits laitiers</string>
-    <string name="text_question_preferences_alimentaires">Quelles sont vos préférences alimentaires ?</string>
+    <string name="text_switch_vege">Vous êtes végétarien</string>
+    <string name="text_switch_gluten"></string>
+    <string name="text_produits_laitiers">Vous aimez le lait et le fromage</string>
+    <string name="text_question_preferences_alimentaires">Parlez-nous un peu de vous</string>
     <string name="text_titre_slide">LocalFeeds</string>
     <string name="text_desc_slide">L\'application pour consommer local.</string>
     <string name="anouncement_list">Liste d\'annonces</string>
+    <string name="name_application">Localfeeds</string>
+    <string name="text_welcome">Bienvenue sur l\'application</string>
+    <string name="vous_etes">Vous êtes …</string>
     <string name="icon_right_arrow">icon qui mène à la fiche producteur</string>
 </resources>

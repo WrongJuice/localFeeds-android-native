@@ -58,17 +58,19 @@ public class IntroActivity extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.black));
+            dots[i].setTextColor(getResources().getColor(R.color.shiny_shamrock));
             dotsLayout.addView(dots[i]);
         }
 
         if (dots.length > 0) {
-            dots[position].setTextColor(getResources().getColor(R.color.purple_200));
+            dots[position].setTextColor(getResources().getColor(R.color.black));
         }
 
         if (position == 2) {
+            boutonDebut.setBackgroundColor(getResources().getColor(R.color.go_green));
             boutonDebut.setEnabled(true);
         } else {
+            boutonDebut.setBackgroundColor(getResources().getColor(R.color.grey));
             boutonDebut.setEnabled(false);
         }
     }

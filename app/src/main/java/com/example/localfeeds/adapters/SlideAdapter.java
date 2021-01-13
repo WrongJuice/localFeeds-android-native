@@ -23,21 +23,21 @@ public class SlideAdapter extends PagerAdapter {
     }
 
     public int[] slide_images = {
-            R.drawable.cutlery,
-            R.drawable.no_junk_food,
-            R.drawable.salad
+            R.drawable.salad,
+            R.drawable.source_locale,
+            R.drawable.cutlery
     };
 
     public String[] slide_headings = {
-            "Manger local",
-            "Manger sain",
-            "Manger équilibré"
+            "Des produits locaux !",
+            "Proche de chez vous !",
+            "Personnalisable !"
     };
 
     public String[] slide_desc = {
-            "Bienvenue sur LocalFeed",
-            "Vous souhaitez manger sain",
-            "En avant c'est parti"
+            "Trouver tous les produits que vous souhaitez pour faire vos courses et cuisinez de bons petits plats.",
+            "Participer à l'économie locale et renforcer vos liens avec les producteurs locaux.",
+            "Personnaliser vos préférences pour une expérience unique."
     };
 
     @Override
