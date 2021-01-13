@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class VueListeProducteurs extends FrameLayout {
 
+    static boolean test = true;
+
     public VueListeProducteurs(@NonNull Context context) {
         super(context);
         inflate(context, R.layout.liste_producteurs_layout, this);
@@ -56,7 +58,16 @@ public class VueListeProducteurs extends FrameLayout {
             @Override
             public void onClick(View view) {
 
-                favoriteButton.setImageResource(R.drawable.ic_love_color);
+                if (test) {
+
+                    favoriteButton.setImageResource(R.drawable.ic_love_color);
+                    test = false;
+                }
+                else {
+
+                    favoriteButton.setImageResource(R.drawable.ic_love);
+                    test = true;
+                }
             }
         });
 
