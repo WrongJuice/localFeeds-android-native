@@ -19,7 +19,7 @@ public class ProductorService {
         ArrayList<Product> productMilk = new ArrayList<>();
 
         productViande.add(Product.Viande);
-        productOther.add(Product.Autre);productOther.add(Product.Légume);productOther.add(Product.Fruit);
+        productOther.add(Product.Autre);productOther.add(Product.Legume);productOther.add(Product.Fruit);
         productMilk.add(Product.Laitage);
 
         productor1 = new Productor(

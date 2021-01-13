@@ -2,7 +2,7 @@ package com.example.localfeeds.models;
 
 public enum Product {
     Viande,
-    Légume,
+    Legume,
     Fruit,
     Laitage,
     Autre
