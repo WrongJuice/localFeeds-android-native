@@ -1,5 +1,6 @@
 package com.example.localfeeds.activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -8,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.localfeeds.R;
 import com.example.localfeeds.adapters.AnnouncementAdapter;
 import com.example.localfeeds.datas.AnnouncementService;
-import com.example.localfeeds.models.Announcement;
+import com.example.localfeeds.datas.ProductorService;
+import com.example.localfeeds.models.Product;
+import com.example.localfeeds.models.Productor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AnnouncementsListActivity extends AppCompatActivity {
 
@@ -26,5 +30,24 @@ public class AnnouncementsListActivity extends AppCompatActivity {
         listView = findViewById(R.id.announcement_list);
         listView.setAdapter(announcementAdapter);
 
+        // NEED TO BE CLEANED
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        boolean isVegetarien = pref.getBoolean(getString(R.string.is_vegetarien), false);
+        ArrayList<Productor> listeDesProducteurs = new ProductorService().getProductors();
+
+        if (isVegetarien) {
+            for (Productor aProductor : listeDesProducteurs) {
+                if (!aProductor.containsSomethingElseThan(Product.Viande))
+                    aProductor.undisplay();
+            }
+        } else { // If I unselect the vegetarien option
+            for (Productor aProductor : listeDesProducteurs) {
+                aProductor.display();
+            }
+        }
+
+        announcementAdapter = new AnnouncementAdapter(this, announcementService.getAnnouncements());
+        listView = findViewById(R.id.announcement_list);
+        listView.setAdapter(announcementAdapter);
     }
 }

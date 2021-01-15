@@ -18,12 +18,14 @@ import com.example.localfeeds.activities.DetailAnnouncementActivity;
 import com.example.localfeeds.activities.MainActivity;
 import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Announcement;
+import com.example.localfeeds.models.Product;
 
 import java.util.ArrayList;
 
 public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
 
-    Context context;
+    private Context context;
+    private LinearLayout announcementView;
 
     public AnnouncementAdapter(Context context, ArrayList<Announcement> announcements) {
         super(context, 0, announcements);
@@ -46,16 +48,38 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
         TextView announcementDescription = convertView.findViewById(R.id.description);
         TextView title = convertView.findViewById(R.id.title);
         TextView distance = convertView.findViewById(R.id.distance);
-        LinearLayout announcementView = convertView.findViewById(R.id.announcement_view);
+        announcementView = convertView.findViewById(R.id.announcement_view);
 
-        //NEED TO BE SOLVED
+        //NEED TO BE CLEANED
         ProductorService productorService = new ProductorService();
+        /*if (!productorService.getProductorById(announcement.getIdProductor()).isDisplayed())
+            announcementView.setVisibility(View.GONE);*/
 
         // Populate the data into the template view using the data object
         productorName.setText(productorService.getProductorById(announcement.getIdProductor()).getName());
         announcementDescription.setText(announcement.getDescription());
         title.setText(announcement.getTitle());
         //distance.setText(announcement.getProductor.récupérer sa distance);
+
+        //icons
+        ImageView vegetablesIcon = convertView.findViewById(R.id.modele_liste_producteur_logo_vegetable);
+        ImageView fruitsIcon = convertView.findViewById(R.id.modele_liste_producteur_logo_fruits);
+        ImageView eggsIcon = convertView.findViewById(R.id.modele_liste_producteur_logo_egg);
+        ImageView milkIcon = convertView.findViewById(R.id.modele_liste_producteur_logo_milk);
+        ImageView meatIcon = convertView.findViewById(R.id.modele_liste_producteur_logo_meat);
+
+        ArrayList<Product> productsList = productorService.getProductorById(announcement.getIdProductor()).getTypeProduit();
+
+        if (productsList.contains(Product.Fruit))
+            fruitsIcon.setImageResource(R.drawable.ic_fruits_color);
+        if (productsList.contains(Product.Viande))
+            meatIcon.setImageResource(R.drawable.ic_meat_color);
+        if (productsList.contains(Product.Legume))
+            vegetablesIcon.setImageResource(R.drawable.ic_vegetable_color);
+        if (productsList.contains(Product.Laitage))
+            milkIcon.setImageResource(R.drawable.ic_milk_color);
+        if (productsList.contains(Product.Autre))
+            eggsIcon.setImageResource(R.drawable.ic_eggs_color);
 
         announcementView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailAnnouncementActivity.class);

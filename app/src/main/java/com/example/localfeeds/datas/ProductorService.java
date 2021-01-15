@@ -8,11 +8,11 @@ import java.util.List;
 
 public class ProductorService {
 
-    Productor productor1;
-    Productor productor2;
-    Productor productor3;
-    Productor productor4;
-    ArrayList<Productor> productors = new ArrayList<>();
+    private Productor productor1;
+    private Productor productor2;
+    private Productor productor3;
+    private Productor productor4;
+    private static ArrayList<Productor> productors = new ArrayList<>();
 
     public ProductorService() {
         ArrayList<Product> productViande = new ArrayList<>();
@@ -63,13 +63,17 @@ public class ProductorService {
                 "ferme4",
                 productOther
         );
-        productors.add(productor1);
-        productors.add(productor2);
-        productors.add(productor3);
-        productors.add(productor4);
+
+        if (productors.size() == 0){
+            productors.add(productor1);
+            productors.add(productor2);
+            productors.add(productor3);
+            productors.add(productor4);
+        }
+
     }
 
-    public List<Productor> getProductors() {
+    public ArrayList<Productor> getProductors() {
         return productors;
     }
 

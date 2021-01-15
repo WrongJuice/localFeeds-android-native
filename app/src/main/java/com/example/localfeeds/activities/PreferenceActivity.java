@@ -27,15 +27,17 @@ public class PreferenceActivity extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
 
-        boutonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editor.putBoolean(getString(R.string.is_vegetarien), boutonSwitch.isChecked());
-                editor.apply();
+        boutonConfirm.setOnClickListener(view -> {
+            editor.putBoolean(getString(R.string.is_vegetarien), boutonSwitch.isChecked());
+            editor.apply();
 
-                Intent intentionNaviguerListeProducteurs = new Intent(PreferenceActivity.this, ListeProducteursActivity.class);
-                startActivity(intentionNaviguerListeProducteurs);
-            }
+            Intent intentionNaviguerListeProducteurs = new Intent(PreferenceActivity.this, ProductorsListActivity.class);
+            startActivity(intentionNaviguerListeProducteurs);
         });
+    }
+
+    public void launchAnnouncementList(View view) {
+        Intent listAnnouncement = new Intent(PreferenceActivity.this, AnnouncementsListActivity.class);
+        startActivity(listAnnouncement);
     }
 }

@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class VueListeProducteurs extends FrameLayout {
 
     static boolean test = true;
+    private RelativeLayout productorLayout;
 
     public VueListeProducteurs(@NonNull Context context) {
         super(context);
@@ -26,7 +28,14 @@ public class VueListeProducteurs extends FrameLayout {
     }
 
     @SuppressLint("SetTextI18n")
-    public void populate(@NonNull Productor producteur) {
+    public void populate(@NonNull Productor productor) {
+
+        productorLayout = findViewById(R.id.productor_layout);
+
+        if (!productor.isDisplayed()){
+            productorLayout.setVisibility(View.GONE);
+            System.out.println("productor not displayed : " + productor.getName());
+        }
 
         TextView texteNomProducteur = findViewById(R.id.modele_liste_producteurs_nom_prenom_producteur);
         TextView texteHorairesOuvertures = findViewById(R.id.modele_liste_producteurs_horaires_ouverture);
@@ -41,7 +50,7 @@ public class VueListeProducteurs extends FrameLayout {
         ImageView milkIcon = findViewById(R.id.modele_liste_producteur_logo_milk);
         ImageView meatIcon = findViewById(R.id.modele_liste_producteur_logo_meat);
 
-        ArrayList<Product> productsList = producteur.getTypeProduit();
+        ArrayList<Product> productsList = productor.getTypeProduit();
 
         if (productsList.contains(Product.Fruit))
             fruitsIcon.setImageResource(R.drawable.ic_fruits_color);
@@ -54,29 +63,26 @@ public class VueListeProducteurs extends FrameLayout {
         if (productsList.contains(Product.Autre))
             eggsIcon.setImageResource(R.drawable.ic_eggs_color);
 
-        favoriteButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        favoriteButton.setOnClickListener(view -> {
 
-                if (test) {
+            if (test) {
 
-                    favoriteButton.setImageResource(R.drawable.ic_love_color);
-                    test = false;
-                }
-                else {
+                favoriteButton.setImageResource(R.drawable.ic_love_color);
+                test = false;
+            }
+            else {
 
-                    favoriteButton.setImageResource(R.drawable.ic_love);
-                    test = true;
-                }
+                favoriteButton.setImageResource(R.drawable.ic_love);
+                test = true;
             }
         });
 
-        texteNomProducteur.setText(producteur.getName());
-        texteHorairesOuvertures.setText(producteur.getSchedule());
+        texteNomProducteur.setText(productor.getName());
+        texteHorairesOuvertures.setText(productor.getSchedule());
 
         Context context = imageProducteur.getContext();
-        System.out.println(producteur.getImage());
-        int id = context.getResources().getIdentifier(producteur.getImage(), "drawable", context.getPackageName());
+        System.out.println(productor.getImage());
+        int id = context.getResources().getIdentifier(productor.getImage(), "drawable", context.getPackageName());
         imageProducteur.setImageResource(id);
     }
 }

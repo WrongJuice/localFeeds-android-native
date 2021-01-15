@@ -12,6 +12,7 @@ public class Productor {
     private String desc;
     private String image;
     private ArrayList<Product> typeProduit;
+    private boolean displayed;
 
     public Productor(String id, String name, String adresse, String contact, String schedule, String desc, String image, ArrayList<Product> typeProduit) {
         this.id = id;
@@ -22,6 +23,15 @@ public class Productor {
         this.desc = desc;
         this.image = image;
         this.typeProduit = typeProduit;
+        displayed = true;
+    }
+
+    public boolean containsSomethingElseThan (Product typePorduit) {
+        boolean isContainingElse = false;
+        for (Product product : typeProduit) {
+            isContainingElse = isContainingElse || !product.equals(typePorduit);
+        }
+        return isContainingElse;
     }
 
     public String getId() {
@@ -86,5 +96,17 @@ public class Productor {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void undisplay() {
+        this.displayed = false;
+    }
+
+    public void display() {
+        this.displayed = true;
+    }
+
+    public boolean isDisplayed() {
+        return displayed;
     }
 }

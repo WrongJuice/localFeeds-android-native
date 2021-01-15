@@ -39,13 +39,10 @@ public class IntroActivity extends AppCompatActivity {
         addDotsIndicator(0);
         slideViewPager.addOnPageChangeListener(viewListener);
 
-        boutonDebut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent main_activity = new Intent(IntroActivity.this, PreferenceActivity.class);
-                startActivity(main_activity);
-                finish();
-            }
+        boutonDebut.setOnClickListener(view -> {
+            Intent main_activity = new Intent(IntroActivity.this, PreferenceActivity.class);
+            startActivity(main_activity);
+            finish();
         });
     }
 
@@ -78,7 +75,6 @@ public class IntroActivity extends AppCompatActivity {
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
         }
 
         @Override

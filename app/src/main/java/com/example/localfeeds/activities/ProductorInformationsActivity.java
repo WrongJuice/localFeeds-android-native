@@ -15,7 +15,7 @@ import com.example.localfeeds.R;
 import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Productor;
 
-public class InformationProducteur extends AppCompatActivity {
+public class ProductorInformationsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +39,22 @@ public class InformationProducteur extends AppCompatActivity {
         champHoraires.setText(productor.getSchedule());
         champDescription.setText(productor.getDesc());
 
-        arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        arrow.setOnClickListener(view -> {
 
-                if (hiddenView.getVisibility() == View.VISIBLE) {
+            if (hiddenView.getVisibility() == View.VISIBLE) {
 
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.GONE);
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_more_24);
-                }
+                TransitionManager.beginDelayedTransition(cardView,
+                        new AutoTransition());
+                hiddenView.setVisibility(View.GONE);
+                arrow.setImageResource(R.drawable.ic_baseline_expand_more_24);
+            }
 
-                else {
+            else {
 
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.VISIBLE);
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
-                }
+                TransitionManager.beginDelayedTransition(cardView,
+                        new AutoTransition());
+                hiddenView.setVisibility(View.VISIBLE);
+                arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
             }
         });
     }
