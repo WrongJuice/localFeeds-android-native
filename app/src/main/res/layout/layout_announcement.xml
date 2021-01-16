@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginStart="20dp">
+
         <ImageView
             android:id="@+id/modele_liste_producteur_logo_meat"
             android:layout_width="20dp"

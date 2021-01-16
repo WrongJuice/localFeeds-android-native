@@ -17,12 +17,12 @@ import com.example.localfeeds.models.Productor;
 
 import java.util.ArrayList;
 
-public class VueListeProducteurs extends FrameLayout {
+public class ProductorsListView extends FrameLayout {
 
     static boolean test = true;
     private RelativeLayout productorLayout;
 
-    public VueListeProducteurs(@NonNull Context context) {
+    public ProductorsListView(@NonNull Context context) {
         super(context);
         inflate(context, R.layout.liste_producteurs_layout, this);
     }

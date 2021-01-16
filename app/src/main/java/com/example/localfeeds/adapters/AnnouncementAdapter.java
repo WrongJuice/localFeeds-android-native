@@ -1,5 +1,6 @@
 package com.example.localfeeds.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -28,12 +29,14 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
     private LinearLayout announcementView;
 
     public AnnouncementAdapter(Context context, ArrayList<Announcement> announcements) {
-        super(context, 0, announcements);
-        this.context = context;
+        super(context, R.layout.layout_announcement, announcements);
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        LinearLayout announcementView;
 
         // Get the data item for this position
         Announcement announcement = getItem(position);
@@ -52,8 +55,8 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
 
         //NEED TO BE CLEANED
         ProductorService productorService = new ProductorService();
-        /*if (!productorService.getProductorById(announcement.getIdProductor()).isDisplayed())
-            announcementView.setVisibility(View.GONE);*/
+        if (!productorService.getProductorById(announcement.getIdProductor()).isDisplayed())
+            return LayoutInflater.from(getContext()).inflate(R.layout.null_item, null);
 
         // Populate the data into the template view using the data object
         productorName.setText(productorService.getProductorById(announcement.getIdProductor()).getName());

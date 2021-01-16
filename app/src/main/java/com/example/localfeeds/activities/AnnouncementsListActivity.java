@@ -14,7 +14,6 @@ import com.example.localfeeds.models.Product;
 import com.example.localfeeds.models.Productor;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AnnouncementsListActivity extends AppCompatActivity {
 
@@ -25,10 +24,7 @@ public class AnnouncementsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcements_list);
-        AnnouncementService announcementService = new AnnouncementService();
-        announcementAdapter = new AnnouncementAdapter(this, announcementService.getAnnouncements());
         listView = findViewById(R.id.announcement_list);
-        listView.setAdapter(announcementAdapter);
 
         // NEED TO BE CLEANED
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
@@ -36,18 +32,15 @@ public class AnnouncementsListActivity extends AppCompatActivity {
         ArrayList<Productor> listeDesProducteurs = new ProductorService().getProductors();
 
         if (isVegetarien) {
-            for (Productor aProductor : listeDesProducteurs) {
-                if (!aProductor.containsSomethingElseThan(Product.Viande))
-                    aProductor.undisplay();
-            }
+            for (Productor aProductor : listeDesProducteurs)
+                if (!aProductor.containsSomethingElseThan(Product.Viande)) aProductor.undisplay();
         } else { // If I unselect the vegetarien option
-            for (Productor aProductor : listeDesProducteurs) {
-                aProductor.display();
-            }
+            for (Productor aProductor : listeDesProducteurs) aProductor.display();
         }
 
+        // NEED CLEANING
+        AnnouncementService announcementService = new AnnouncementService();
         announcementAdapter = new AnnouncementAdapter(this, announcementService.getAnnouncements());
-        listView = findViewById(R.id.announcement_list);
         listView.setAdapter(announcementAdapter);
     }
 }

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.localfeeds.R;
-import com.example.localfeeds.adapters.ListeProducteurAdapteur;
+import com.example.localfeeds.adapters.ProductorsListAdapter;
 import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Product;
 import com.example.localfeeds.models.Productor;
@@ -46,8 +46,8 @@ public class ProductorsListActivity extends AppCompatActivity {
 
         System.out.println("ALED " + listeDesProducteurs.toString());
 
-        ListeProducteurAdapteur listeProducteurAdapteur = new ListeProducteurAdapteur(getApplicationContext());
-        listeProducteurAdapteur.setProducteurs(listeDesProducteurs);
-        listeProducteurs.setAdapter(listeProducteurAdapteur);
+        ProductorsListAdapter productorsListAdapter = new ProductorsListAdapter(getApplicationContext());
+        productorsListAdapter.setProducteurs(listeDesProducteurs);
+        listeProducteurs.setAdapter(productorsListAdapter);
     }
 }

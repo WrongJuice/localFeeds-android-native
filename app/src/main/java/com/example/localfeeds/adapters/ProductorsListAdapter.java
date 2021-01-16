@@ -14,28 +14,28 @@ import com.example.localfeeds.models.Productor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListeProducteurAdapteur extends ArrayAdapter<Productor> {
+public class ProductorsListAdapter extends ArrayAdapter<Productor> {
 
-    public ListeProducteurAdapteur(@NonNull Context context) {
-        super(context, R.layout.liste_producteurs_layout, new ArrayList<Productor>());
+    public ProductorsListAdapter(@NonNull Context context) {
+        super(context, R.layout.liste_producteurs_layout, new ArrayList<>());
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        VueListeProducteurs vueListeProducteurs;
+        ProductorsListView productorsListView;
 
         if (convertView == null)
-            vueListeProducteurs = new VueListeProducteurs(getContext());
+            productorsListView = new ProductorsListView(getContext());
         else
-            vueListeProducteurs = (VueListeProducteurs) convertView;
+            productorsListView = (ProductorsListView) convertView;
 
         Productor producteur = getItem(position);
 
-        vueListeProducteurs.populate(producteur);
+        productorsListView.populate(producteur);
 
-        return vueListeProducteurs;
+        return productorsListView;
     }
 
     public void setProducteurs(List<Productor> producteurs) {
