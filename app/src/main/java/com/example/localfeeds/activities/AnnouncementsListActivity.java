@@ -31,6 +31,7 @@ public class AnnouncementsListActivity extends AppCompatActivity {
         boolean isVegetarien = pref.getBoolean(getString(R.string.is_vegetarien), false);
         ArrayList<Productor> listeDesProducteurs = new ProductorService().getProductors();
 
+
         if (isVegetarien) {
             for (Productor aProductor : listeDesProducteurs)
                 if (!aProductor.containsSomethingElseThan(Product.Viande)) aProductor.undisplay();

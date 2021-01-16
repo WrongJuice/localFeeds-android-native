@@ -55,8 +55,9 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
 
         //NEED TO BE CLEANED
         ProductorService productorService = new ProductorService();
-        if (!productorService.getProductorById(announcement.getIdProductor()).isDisplayed())
+        if (!productorService.getProductorById(announcement.getIdProductor()).isDisplayed()){
             return LayoutInflater.from(getContext()).inflate(R.layout.null_item, null);
+        }
 
         // Populate the data into the template view using the data object
         productorName.setText(productorService.getProductorById(announcement.getIdProductor()).getName());

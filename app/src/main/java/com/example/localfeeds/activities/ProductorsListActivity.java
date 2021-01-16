@@ -32,10 +32,10 @@ public class ProductorsListActivity extends AppCompatActivity {
         ArrayList<Productor> listeDesProducteurs = new ProductorService().getProductors();
 
         if (isVegetarien) {
-            for (Productor aProductor : listeDesProducteurs) {
-                if (!aProductor.containsSomethingElseThan(Product.Viande))
-                    aProductor.undisplay();
-            }
+            for (Productor aProductor : listeDesProducteurs)
+                if (!aProductor.containsSomethingElseThan(Product.Viande)) aProductor.undisplay();
+        } else { // If I unselect the vegetarien option
+            for (Productor aProductor : listeDesProducteurs) aProductor.display();
         }
 
         listeProducteurs.setOnItemClickListener((adapterView, view, i, l) -> {
