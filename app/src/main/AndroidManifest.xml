@@ -11,8 +11,8 @@
         android:theme="@style/Theme.LocalFeeds">
         <activity android:name=".activities.DetailAnnouncementActivity" />
         <activity android:name=".activities.ProductorInformationsActivity" />
-        <activity android:name=".activities.ProductorsListActivity" />
         <activity android:name=".activities.PreferenceActivity" />
+        <activity android:name=".activities.OnboardActivity" />
         <activity android:name=".activities.IntroActivity" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
@@ -21,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AnnouncementsListActivity" />
     </application>
 
 </manifest>

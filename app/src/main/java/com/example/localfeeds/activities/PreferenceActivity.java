@@ -29,15 +29,11 @@ public class PreferenceActivity extends AppCompatActivity {
 
         boutonConfirm.setOnClickListener(view -> {
             editor.putBoolean(getString(R.string.is_vegetarien), boutonSwitch.isChecked());
+            editor.putBoolean("intro", true);
             editor.apply();
 
-            Intent intentionNaviguerListeProducteurs = new Intent(PreferenceActivity.this, ProductorsListActivity.class);
-            startActivity(intentionNaviguerListeProducteurs);
+            Intent mainStart = new Intent(PreferenceActivity.this, MainActivity.class);
+            startActivity(mainStart);
         });
-    }
-
-    public void launchAnnouncementList(View view) {
-        Intent listAnnouncement = new Intent(PreferenceActivity.this, AnnouncementsListActivity.class);
-        startActivity(listAnnouncement);
     }
 }

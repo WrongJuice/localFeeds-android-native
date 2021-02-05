@@ -14,9 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.localfeeds.R;
-import com.example.localfeeds.activities.AnnouncementsListActivity;
 import com.example.localfeeds.activities.DetailAnnouncementActivity;
-import com.example.localfeeds.activities.MainActivity;
 import com.example.localfeeds.datas.ProductorService;
 import com.example.localfeeds.models.Announcement;
 import com.example.localfeeds.models.Product;
