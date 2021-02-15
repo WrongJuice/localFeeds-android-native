@@ -28,6 +28,7 @@ public class AnnouncementAdapter extends ArrayAdapter<Announcement> {
 
     public AnnouncementAdapter(Context context, ArrayList<Announcement> announcements) {
         super(context, R.layout.layout_announcement, announcements);
+        this.context = context;
     }
 
     @SuppressLint("InflateParams")
